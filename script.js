@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
         chat:
             "Chat Application Python client-server sockets par based real-time communication concept hai.",
         education:
-            "Aditya Kumar Diploma in Computer Science Engineering kar rahe hain at Centurion University of Technology and Management. CGPA: 8.0/10.",
+            "Aditya Kumar Diploma in Computer Science Engineering kar rahe hain at Centurion University of Technology and Management (CGPA: 8.0/10). Unhone 10th Class BSEB Board se Ishwari High School, Basant Saran mein complete ki, with 62%.",
         contact:
             "Aditya se contact karne ke liye portfolio ke Contact section mein Email aur WhatsApp options available hain."
     };
@@ -351,7 +351,7 @@ Location: Chhapra, Bihar
 Education:
 - Diploma in Computer Science Engineering, Centurion University of Technology and Management
 - CGPA: 8.0/10
-- 10th: Ishwari High School, Basant Saran, 62%
+- 10th Class, BSEB Board: Ishwari High School, Basant Saran, 62%
 
 Skills: C Programming, C++, Java, Python, HTML, CSS, JavaScript, SQL / MySQL
 
