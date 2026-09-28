@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aditya Kumar | Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="enhance.css">
+</head>
+
+<body>
+    <!-- Portfolio intro: removed by script.js after the entrance sequence -->
+    <div class="intro-screen" id="introScreen" aria-label="Loading portfolio">
+        <div class="intro-mark" aria-hidden="true">
+            <span class="intro-ring intro-ring-one"></span>
+            <span class="intro-ring intro-ring-two"></span>
+            <span class="intro-core">AK</span>
+        </div>
+        <p class="intro-name">ADITYA <span>KUMAR</span></p>
+        <p class="intro-caption">PORTFOLIO <i></i> 2026</p>
+        <div class="intro-progress"><span></span></div>
+    </div>
+
+    <!-- =========================
+     ADVANCED ADITYA AI
+========================= -->
+
+<div class="ai-assistant" id="aiAssistant">
+
+    <!-- Floating Button -->
+    <button
+        class="ai-toggle"
+        id="aiToggle"
+        type="button"
+        aria-label="Open Aditya AI"
+        aria-expanded="false"
+    >
+        <span class="ai-orb">✦</span>
+        <span class="ai-pulse"></span>
+    </button>
+
+
+    <!-- AI WINDOW -->
+    <div
+        class="ai-box"
+        id="aiBox"
+        aria-hidden="true"
+    >
+
+        <!-- HEADER -->
+        <div class="ai-header">
+
+            <div class="ai-brand">
+
+                <div class="ai-avatar">
+                    AI
+                </div>
+
+                <div class="ai-brand-text">
+
+                    <strong>Aditya AI</strong>
+
+                    <div class="ai-status">
+                        <span></span> 
+                        Online • Portfolio Assistant
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="ai-header-actions">
+
+                <button
+                    id="aiClear"
+                    type="button"
+                    title="Clear chat"
+                    aria-label="Clear chat"
+                >
+                    ⌫
+                </button>
+
+                <button
+                    id="aiClose"
+                    type="button"
+                    title="Close"
+                    aria-label="Close"
+                >
+                    ×
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- MESSAGES -->
+        <div
+            class="ai-messages"
+            id="aiMessages"
+            aria-live="polite"
+        >
+
+            <div class="ai-message bot">
+
+                <div class="ai-avatar-small">
+                    AI
+                </div>
+
+                <div class="ai-bubble">
+
+                    <div class="ai-message-name">
+                        Aditya AI
+                    </div>
+
+                    <div class="ai-message-text">
+                        👋 Hey! I'm Aditya AI.
+                        <br><br>
+                        Mujhse Aditya ke baare mein kuch bhi pooch sakte ho —
+                        skills, projects, education, contact ya Nexora AI.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- QUICK QUESTIONS -->
+        <div
+            class="ai-suggestions"
+            id="aiSuggestions"
+        >
+
+            <button
+                type="button"
+                data-question="Aditya ki skills kya hain?"
+            >
+                💻 Skills
+            </button>
+
+            <button
+                type="button"
+                data-question="Aditya ke projects kya hain?"
+            >
+                🚀 Projects
+            </button>
+
+            <button
+                type="button"
+                data-question="Aditya kaun hai?"
+            >
+                👤 About
+            </button>
+
+            <button
+                type="button"
+                data-question="Aditya se contact kaise kare?"
+            >
+                📩 Contact
+            </button>
+
+        </div>
+
+
+        <!-- INPUT -->
+        <div class="ai-input-area">
+
+            <button
+                id="micBtn"
+                type="button"
+                title="Voice input"
+                aria-label="Voice input"
+            >
+                🎙
+            </button>
+
+
+            <textarea
+                id="aiInput"
+                rows="1"
+                placeholder="Ask me about Aditya..."
+                autocomplete="off"
+                aria-label="Ask Aditya AI"
+            ></textarea>
+
+
+            <button
+                id="sendAiBtn"
+                type="button"
+                title="Send"
+                aria-label="Send"
+            >
+                ➤
+            </button>
+
+        </div>
+
+
+        <div class="ai-footer">
+            Aditya AI • Portfolio Assistant
+        </div>
+
+    </div>
+
+</div>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar-header">
+
+        <nav class="navbar">
+
+            <div class="nav-space"></div>
+
+            <div class="menu-wrapper">
+
+                <button
+                    class="menu-toggle"
+                    id="menuToggle"
+                    type="button"
+                    aria-label="Open menu"
+                    aria-expanded="false">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+
+                <div class="nav-menu" id="navMenu">
+
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#education">Education</a>
+                    <a href="#contact">Contact</a>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HOME ================= -->
+
+    <section id="home" class="hero">
+
+        <div class="hero-text">
+
+            <p class="small-title">
+                WELCOME TO MY PORTFOLIO
+            </p>
+
+            <h1>
+                Hi, I'm <span>Aditya Kumar</span>
+            </h1>
+
+            <h2>
+                Diploma CSE Student & Aspiring Developer
+            </h2>
+
+            <p class="hero-description">
+                I am passionate about programming, web development,
+                Android development and Artificial Intelligence.
+            </p>
+
+
+            <div class="buttons">
+
+                <a href="#projects" class="btn">
+                    View My Projects
+                </a>
+
+                <a href="#contact" class="btn secondary">
+                    Contact Me
+                </a>
+
+                <a
+                    href="Resume.pdf"
+                    class="btn secondary"
+                    download>
+                    Download Resume
+                </a>
+
+                <a
+                    href="https://github.com/as6030461-dev/Aditya"
+                    class="btn secondary"
+                    target="_blank"
+                    rel="noopener">
+                    GitHub
+                </a>
+
+                <a
+                    href="#"
+                    class="btn secondary">
+                    LinkedIn
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-image">
+
+            <div class="profile-circle">
+
+                <img
+                    src="profile.jpeg"
+                    alt="Portrait of Aditya Kumar" loading="eager" fetchpriority="high">
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section id="about" class="section">
+
+        <p class="section-title">
+            ABOUT ME
+        </p>
+
+        <h2>
+            Who I Am
+        </h2>
+
+        <p class="about-text">
+            I am Aditya Kumar, a Diploma Computer Science Engineering
+            student with a CGPA of 8. I have a strong foundation in
+            programming, data structures, and web development.
+            I am passionate about building real-world projects
+            and continuously learning new technologies.
+        </p>
+
+    </section>
+
+
+    <!-- ================= SKILLS ================= -->
+
+    <section id="skills" class="section skills-section">
+
+        <p class="section-title">
+            MY SKILLS
+        </p>
+
+        <h2>
+            Technologies <span>I Work With</span>
+        </h2>
+
+        <p class="skills-subtitle">
+            Turning ideas into real-world solutions
+            <br>
+            with modern technologies.
+        </p>
+
+
+        <div class="skills-container">
+
+
+            <!-- C -->
+
+            <div class="skill-card">
+
+                <div class="skill-3d">
+
+                    <div class="skill-glow"></div>
+
+                    <div class="skill-icon c-icon">
+                        C
+                    </div>
+
+                    <div class="orbit orbit-one"></div>
+                    <div class="orbit orbit-two"></div>
+
+                </div>
+
+                <h3>
+                    C Programming
+                </h3>
+
+            </div>
+
+
+            <!-- C++ -->
+
+            <div class="skill-card">
+
+                <div class="skill-3d">
+
+                    <div class="skill-glow"></div>
+
+                    <div class="skill-icon cpp-icon">
+                        C++
+                    </div>
+
+                    <div class="orbit orbit-one"></div>
+                    <div class="orbit orbit-two"></div>
+
+                </div>
+
+                <h3>
+                    C++
+                </h3>
+
+            </div>
+
+
+            <!-- JAVA -->
+
+            <div class="skill-card">
+
+                <div class="skill-3d">
+
+                    <div class="skill-glow"></div>
+
+                    <div class="skill-icon java-icon">
+                        ☕
+                    </div>
+
+                    <div class="orbit orbit-one"></div>
+                    <div class="orbit orbit-two"></div>
+
+                </div>
+
+                <h3>
+                    Java
+                </h3>
+
+            </div>
+
+
+            <!-- PYTHON -->
+
+            <div class="skill-card">
+
+                <div class="skill-3d">
+
+                    <div class="skill-glow"></div>
+
+                    <div class="skill-icon python-icon">
+                        🐍
+                    </div>
+
+                    <div class="orbit orbit-one"></div>
+                    <div class="orbit orbit-two"></div>
+
+                </div>
+
+                <h3>
+                    Python
+                </h3>
+
+            </div>
+
+
+            <!-- HTML -->
+
+            <div class="skill-card">
+
+                <div class="skill-3d">
+
+                    <div class="skill-glow"></div>
+
+                    <div class="skill-icon html-icon">
+                        5
+                    </div>
+
+                    <div class="orbit orbit-one"></div>
+                    <div class="orbit orbit-two"></div>
+
+                </div>
+
+                <h3>
+                    HTML
+                </h3>
+
+            </div>
+
+
+            <!-- CSS -->
+
+            <div class="skill-card">
+
+                <div class="skill-3d">
+
+                    <div class="skill-glow"></div>
+
+                    <div class="skill-icon css-icon">
+                        3
+                    </div>
+
+                    <div class="orbit orbit-one"></div>
+                    <div class="orbit orbit-two"></div>
+
+                </div>
+
+                <h3>
+                    CSS
+                </h3>
+
+            </div>
+
+
+            <!-- JAVASCRIPT -->
+
+            <div class="skill-card javascript-card">
+
+                <div class="skill-3d">
+
+                    <div class="skill-glow"></div>
+
+                    <div class="skill-icon js-icon">
+                        JS
+                    </div>
+
+                    <div class="orbit orbit-one"></div>
+                    <div class="orbit orbit-two"></div>
+
+                </div>
+
+                <h3>
+                    JavaScript
+                </h3>
+
+            </div>
+
+
+            <!-- MYSQL -->
+
+            <div class="skill-card">
+
+                <div class="skill-3d">
+
+                    <div class="skill-glow"></div>
+
+                    <div class="skill-icon mysql-icon">
+                        SQL
+                    </div>
+
+                    <div class="orbit orbit-one"></div>
+                    <div class="orbit orbit-two"></div>
+
+                </div>
+
+                <h3>
+                    SQL / MySQL
+                </h3>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PROJECTS ================= -->
+
+    <section id="projects" class="section">
+
+        <p class="section-title">
+            MY PROJECTS
+        </p>
+
+        <h2>
+            Recent Projects
+        </h2>
+
+
+        <div class="projects-container">
+
+
+            <!-- PROJECT 01 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    01
+                </div>
+
+                <h3>
+                    Nexora AI
+                </h3>
+
+                <p>
+                    An AI-powered website builder that allows users to
+                    generate, customize, preview and publish websites.
+                </p>
+
+                <span>
+                    Java • AI • Web Development
+                </span>
+
+
+                <div class="project-buttons">
+
+                    <a
+                        href="https://nexora-ai-webbuilder.vercel.app/"
+                        class="btn"
+                        target="_blank"
+                        rel="noopener">
+                        Live Demo
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 02 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    02
+                </div>
+
+                <h3>
+                    Online Library Management System
+                </h3>
+
+                <p>
+                    Web application to manage book issue and return
+                    using HTML, CSS, JavaScript and PHP/MySQL.
+                </p>
+
+                <span>
+                    HTML • CSS • JS • PHP
+                </span>
+
+            </div>
+
+
+            <!-- PROJECT 03 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    03
+                </div>
+
+                <h3>
+                    Chat Application
+                </h3>
+
+                <p>
+                    Python-based client-server chat application
+                    using sockets for real-time communication.
+                </p>
+
+                <span>
+                    Python • Networking
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= EDUCATION ================= -->
+
+    <section id="education" class="section">
+
+        <p class="section-title">
+            EDUCATION
+        </p>
+
+        <h2>
+            My Education
+        </h2>
+
+
+        <div class="education-card">
+
+            <div class="education-icon">
+                🎓
+            </div>
+
+            <div>
+
+                <h3>
+                    Diploma in Computer Science Engineering
+                </h3>
+
+                <p>
+                    Centurion University of Technology and Management
+                </p>
+
+                <p>
+                    Computer Science Engineering
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section id="contact" class="section contact">
+
+        <p class="section-title">
+            CONTACT
+        </p>
+
+        <h2>
+            Let's Connect
+        </h2>
+
+        <p>
+            Interested in working together or discussing a project?
+        </p>
+
+
+        <div class="contact-buttons">
+
+            <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=as6030461@gmail.com"
+                class="btn"
+                target="_blank"
+                rel="noopener">
+
+                Send Me an Email
+
+            </a>
+
+
+            <a
+                href="https://wa.me/918102761782"
+                class="btn whatsapp-btn"
+                target="_blank"
+                rel="noopener">
+
+                💬 WhatsApp Me
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 Aditya Kumar. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- ================= AI JAVASCRIPT FILE ================= -->
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="enhance.js"></script>
+
+</body>
+
+</html>
