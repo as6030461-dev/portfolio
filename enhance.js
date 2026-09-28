@@ -5,12 +5,23 @@
 
   // scroll progress + cursor glow
   const bar = document.body.appendChild(Object.assign(document.createElement("div"), { id: "scrollBar" }));
-  const glow = document.body.appendChild(Object.assign(document.createElement("div"), { id: "cursorGlow" }));
+  const glow = mobile
+    ? null
+    : document.body.appendChild(Object.assign(document.createElement("div"), { id: "cursorGlow" }));
+  let scrollFrame = 0;
   addEventListener("scroll", () => {
-    const h = document.documentElement;
-    bar.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight || 1)) * 100 + "%";
+    if (scrollFrame) return;
+    scrollFrame = requestAnimationFrame(() => {
+      const h = document.documentElement;
+      bar.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight || 1)) * 100 + "%";
+      scrollFrame = 0;
+    });
   }, { passive: true });
-  addEventListener("pointermove", e => { glow.style.transform = `translate(${e.clientX}px,${e.clientY}px)`; }, { passive: true });
+  if (glow) {
+    addEventListener("pointermove", e => {
+      glow.style.transform = `translate(${e.clientX}px,${e.clientY}px)`;
+    }, { passive: true });
+  }
 
   // Interactive controls: small magnetic pull and click feedback.
   if (!reduce && matchMedia("(pointer: fine)").matches) {
@@ -55,14 +66,19 @@
   }
 
   // 3D tilt on cards
-  document.querySelectorAll(".skill-card,.project-card,.education-card").forEach(el => {
-    el.addEventListener("pointermove", e => {
-      const r = el.getBoundingClientRect();
-      el.style.setProperty("--ry", ((e.clientX - r.left) / r.width - .5) * 16 + "deg");
-      el.style.setProperty("--rx", (.5 - (e.clientY - r.top) / r.height) * 16 + "deg");
+  if (!mobile && !reduce && matchMedia("(pointer: fine)").matches) {
+    document.querySelectorAll(".skill-card,.project-card,.education-card").forEach(el => {
+      el.addEventListener("pointermove", e => {
+        const r = el.getBoundingClientRect();
+        el.style.setProperty("--ry", ((e.clientX - r.left) / r.width - .5) * 16 + "deg");
+        el.style.setProperty("--rx", (.5 - (e.clientY - r.top) / r.height) * 16 + "deg");
+      });
+      el.addEventListener("pointerleave", () => {
+        el.style.setProperty("--rx", "0deg");
+        el.style.setProperty("--ry", "0deg");
+      });
     });
-    el.addEventListener("pointerleave", () => { el.style.setProperty("--rx", "0deg"); el.style.setProperty("--ry", "0deg"); });
-  });
+  }
 
   // 3D reveal on scroll
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: .12 });

@@ -6,28 +6,11 @@ document.addEventListener("DOMContentLoaded", () => {
     ========================================================= */
     const introScreen = document.getElementById("introScreen");
     if (introScreen) {
+        const introDuration = window.matchMedia("(max-width: 700px)").matches ? 900 : 1900;
         window.setTimeout(() => {
             introScreen.classList.add("intro-exit");
             window.setTimeout(() => introScreen.remove(), 750);
-        }, 1900);
-    }
-
-    const profile = document.querySelector(".profile-circle");
-    if (profile && window.matchMedia("(pointer: fine)").matches &&
-        !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        profile.addEventListener("pointermove", (event) => {
-            const rect = profile.getBoundingClientRect();
-            const px = (event.clientX - rect.left) / rect.width;
-            const py = (event.clientY - rect.top) / rect.height;
-            profile.style.setProperty("--tilt-x", `${(0.5 - py) * 22}deg`);
-            profile.style.setProperty("--tilt-y", `${(px - 0.5) * 26}deg`);
-            profile.classList.add("is-tilting");
-        });
-        profile.addEventListener("pointerleave", () => {
-            profile.classList.remove("is-tilting");
-            profile.style.removeProperty("--tilt-x");
-            profile.style.removeProperty("--tilt-y");
-        });
+        }, introDuration);
     }
 
     /* =========================================================
@@ -98,28 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         revealElements.forEach((element) => element.classList.add("visible"));
     }
-
-    /* =========================================================
-       3. SKILL CARD 3D TILT
-    ========================================================= */
-    document.querySelectorAll(".skill-card").forEach((card) => {
-        card.addEventListener("mousemove", (event) => {
-            const rect = card.getBoundingClientRect();
-            const x = event.clientX - rect.left;
-            const y = event.clientY - rect.top;
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            const rotateX = ((y - centerY) / centerY) * -5;
-            const rotateY = ((x - centerX) / centerX) * 5;
-
-            card.style.transform =
-                `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
-        });
-
-        card.addEventListener("mouseleave", () => {
-            card.style.transform = "";
-        });
-    });
 
     /* =========================================================
        4. ADITYA AI DOM
